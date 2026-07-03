@@ -17,7 +17,7 @@ phases:
       - ls -la
       - echo "Searching for index.mjs anywhere in repo..."
       - find . -name "index.mjs" -not -path "*/node_modules/*"
-      - test -f index.mjs || (echo "ERROR: index.mjs not found at repo root" && exit 1)
+      - 'test -f index.mjs || (echo "ERROR - index.mjs not found at repo root" && exit 1)'
   build:
     commands:
       - rm -f function.zip
